@@ -39,6 +39,9 @@ onMounted(async () => {
   <div class="image" v-for="producto in catProductos" :key="producto.id">
     <p>{{ producto.nombre }}</p>
   </div>
+  <div class="box">
+  <div class="inner-box"></div>
+</div>
 </div>
 
 
@@ -67,6 +70,7 @@ onMounted(async () => {
             
             <input type="submit" value="Filtrar">
         </form>
+        
 </div>
 
 
@@ -77,6 +81,48 @@ onMounted(async () => {
 </template>
 
 <style>
+
+ /*
+    Copy the provided snippet from
+    Shadow Palette Generator.
+
+    (I'm using a simplified snippet
+    here, to make it easier to follow)
+  */
+  :root {
+    --shadow-color: 286deg 36% 58%;
+    --shadow-elevation-medium:
+      2px 4px 8px
+      hsl(var(--shadow-color) / 0.5);
+  }
+
+  .box {
+    background: hsl(0deg 0% 95%);
+    /*
+      Use the purple-tinted shadow
+      on the outer box:
+    */
+    box-shadow:
+      var(--shadow-elevation-medium);
+  }
+
+  .inner-box {
+    /*
+      This box should have a
+      different shadow color! So we
+      provide a new --shadow-color, and
+      reset --shadow-elevation-medium
+    */
+    --shadow-color: 0deg 0% 58%;
+    --shadow-elevation-medium:
+      2px 4px 8px
+      hsl(var(--shadow-color) / 0.5);
+
+    background: white;
+    box-shadow:
+      var(--shadow-elevation-medium);
+  }
+  
 .grow{
     transition: .5s, color .10s;
         -webkit-transition: .5s, color .10s;
