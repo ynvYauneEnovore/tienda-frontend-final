@@ -1,200 +1,175 @@
-<script setup lang="ts">
-import Footer from "../components/Footer.vue";
-import Header from "../components/Header.vue";
-</script>
-
 <template>
-          <Header />
-          <br><br><br><br>
-
-                <!-- BEGIN: General Report -->
-                <div class="col-span-12 mt-8">
-                    <div class="intro-y flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">Reporte s</h2>
-                        <a href="" class="ml-auto flex items-center text-primary">
-                            <i data-lucide="refresh-ccw" class="w-4 h-4 mr-3"></i> Recargar Datos
-                        </a>
-                    </div>
-                    <div class="grid grid-cols-12 gap-6 mt-5">
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="flex">
-                                        <i data-lucide="shopping-cart" class="report-box__icon text-primary"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-success tooltip cursor-pointer" title="33% Higher than last month">
-                                                33% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">4.710</div>
-                                    <div class="text-base text-slate-500 mt-1">Libros en Stock</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="flex">
-                                        <i data-lucide="credit-card" class="report-box__icon text-pending"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-danger tooltip cursor-pointer" title="2% Lower than last month">
-                                                2% <i data-lucide="chevron-down" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">351</div>
-                                    <div class="text-base text-slate-500 mt-1">Nuevas Ordenes</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="flex">
-                                        <i data-lucide="monitor" class="report-box__icon text-warning"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-success tooltip cursor-pointer" title="12% Higher than last month">
-                                                12% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">2.149</div>
-                                    <div class="text-base text-slate-500 mt-1">Total Vendidos</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="flex">
-                                        <i data-lucide="user" class="report-box__icon text-success"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-success tooltip cursor-pointer" title="22% Higher than last month">
-                                                22% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">1456</div>
-                                    <div class="text-base text-slate-500 mt-1">TOTAL</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                   <!-- BEGIN: General Report -->
-                   <div class="col-span-12 mt-8">
-                
-                    <div class="grid grid-cols-12 gap-6 mt-5">
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="flex">
-                                        <i data-lucide="shopping-cart" class="report-box__icon text-primary"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-success tooltip cursor-pointer" title="33% Higher than last month">
-                                                33% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">4.710</div>
-                                    <div class="text-base text-slate-500 mt-1">Productos en Stock</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="flex">
-                                        <i data-lucide="credit-card" class="report-box__icon text-pending"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-danger tooltip cursor-pointer" title="2% Lower than last month">
-                                                2% <i data-lucide="chevron-down" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">3.721</div>
-                                    <div class="text-base text-slate-500 mt-1">Neuvas Ordenes</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="flex">
-                                        <i data-lucide="monitor" class="report-box__icon text-warning"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-success tooltip cursor-pointer" title="12% Higher than last month">
-                                                12% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">2.149</div>
-                                    <div class="text-base text-slate-500 mt-1">Total Vendido</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
-                            <div class="report-box zoom-in">
-                                <div class="box p-5">
-                                    <div class="flex">
-                                        <i data-lucide="user" class="report-box__icon text-success"></i>
-                                        <div class="ml-auto">
-                                            <div class="report-box__indicator bg-success tooltip cursor-pointer" title="22% Higher than last month">
-                                                22% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-3xl font-medium leading-8 mt-6">152.040</div>
-                                    <div class="text-base text-slate-500 mt-1">TOTAL</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END: General Report -->
-                <br>
-                <div class="bg-white py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl sm:text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Simple no-tricks pricing</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-600">Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut non voluptas in. Explicabo id ut laborum.</p>
+  <div class="dashboard">
+    
+    <aside class="sidebar">
+      <!-- Barra lateral con menú -->
+      <div class="logo">
+        Panel
       </div>
-      <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
-        <div class="p-8 sm:p-10 lg:flex-auto">
-          <h3 class="text-2xl font-bold tracking-tight text-gray-900">Lifetime membership</h3>
-          <p class="mt-6 text-base leading-7 text-gray-600">Lorem ipsum dolor sit amet consect etur adipisicing elit. Itaque amet indis perferendis blanditiis repellendus etur quidem assumenda.</p>
-          <div class="mt-10 flex items-center gap-x-4">
-            <h4 class="flex-none text-sm font-semibold leading-6 text-indigo-600">What’s included</h4>
-            <div class="h-px flex-auto bg-gray-100" />
-          </div>
-          <ul role="list" class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6">
-            <li v-for="feature in includedFeatures" :key="feature" class="flex gap-x-3">
-              <CheckIcon class="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
-              {{ feature }}
-            </li>
-          </ul>
-        </div>
-        <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-          <div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
-            <div class="mx-auto max-w-xs px-8">
-              <p class="text-base font-semibold text-gray-600">Pay once, own it forever</p>
-              <p class="mt-6 flex items-baseline justify-center gap-x-2">
-                <span class="text-5xl font-bold tracking-tight text-gray-900">$349</span>
-                <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
-              </p>
-              <a href="#" class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get access</a>
-              <p class="mt-6 text-xs leading-5 text-gray-600">Invoices and receipts available for easy company reimbursement</p>
-            </div>
-          </div>
-        </div>
+
+      <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button">
+        <router-link to="/panel">Resumen</router-link>
+      </button>
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Ventas
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+     
+      <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+  <button type="button" class="btn btn-primary">Button</button>
+</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Productos
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="button-container">
+    <router-link to="/panel/verProducto/ver" class="btn btn-primary">Lista</router-link>
+    <router-link to="/panel/verProducto/" class="btn btn-primary">Categorias</router-link>
+</div>
+
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Reportes
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
       </div>
     </div>
   </div>
-        <Footer />
+</div>
+
+
+      <ul class="menu">
+        <li><router-link to="/panel">Resumen</router-link></li>
+        <li :class="{ active: showDropdown }" @click="toggleDropdown">Productos</li>
+        <ul class="submenu" :class="{ show: showDropdown }">
+          <li :class="{ active: showSubmenu1 }" @click="toggleSubmenu1">Categorías
+            <ul class="subsubmenu" :class="{ show: showSubmenu1 }">
+              <li><router-link to="/panel/crear">Ver</router-link></li>
+              <li><router-link to="/panel/crear">Crear</router-link></li>
+            </ul>
+          </li>
+          <li><router-link to="/configuracion/opcion2">Producto</router-link></li>
+          <li :class="{ active: showSubmenu2 }" @click="toggleSubmenu2">Submenu 2
+            <ul class="subsubmenu" :class="{ show: showSubmenu2 }">
+              <li><router-link to="/panel/crear">Ver</router-link></li>
+              <li><router-link to="/panel">Crear</router-link></li>
+            </ul>
+          </li>
+        </ul>
+      </ul>
+    </aside>
+
+    
+
+    <main class="main-dash">
+      <RouterView />
+    </main>
+  </div>
 </template>
 
-<style>
+<script setup>
+
+import { ref } from 'vue';
+
+const showDropdown = ref(false);
+const showSubmenu1 = ref(false);
+const showSubmenu2 = ref(false);
+
+const toggleDropdown = () => {
+  showDropdown.value = !showDropdown.value;
+};
+
+const toggleSubmenu1 = () => {
+  showSubmenu1.value = !showSubmenu1.value;
+};
+
+const toggleSubmenu2 = () => {
+  showSubmenu2.value = !showSubmenu2.value;
+};
+</script>
+
+<style scoped>
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  width: 350px;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  position: flex;
+}
+
+.main-dash {
+  top: 80%;
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.menu .submenu {
+  display: none;
+}
+
+.menu .submenu.show {
+  display: block;
+}
+
+.menu .subsubmenu {
+  display: none;
+}
+
+.menu .subsubmenu.show {
+  display: block;
+}
+
+.menu .active {
+  font-weight: bold;
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container button {
+  margin-bottom: 10px; /* Opcional: añade espacio entre los botones si lo deseas */
+}
 
 </style>

@@ -25,36 +25,54 @@
         </div>
   
         <button type="submit" class="login-button">Ingresar</button>
-  
-        <p v-if="error" class="error-message">Usuario y/o contraseña incorrectos</p>
+   
+        <!-- <p v-if="error" class="error-message">Usuario y/o contraseña incorrectos</p> -->
       </form>
     </div>
   </template>
   
-  <script>
-  import { ref } from "vue";
-  import { useAuthStore } from "@/stores/index";
+  <script setup lang="ts">
+import { ref } from "vue";
+import { useAuthStore } from "@/stores/index";
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
+
+// const notify = () => {
+//   toast("Default Notification !");
   
-  export default {
-    setup() {
-      const usuario = ref("admin@admin.com");
-      const clave = ref("12345678");
-      const error = ref(false);
+//   toast.success("Success Notification !", {
+//     position: toast.POSITION.TOP_CENTER,
+//   });
   
-      const onSubmit = () => {
-        const authStore = useAuthStore();
-        authStore.login(usuario.value, clave.value).catch(() => (error.value = true));
-      };
+//   toast.error("Error Notification !", {
+//     position: toast.POSITION.TOP_LEFT,
+//   });
   
-      return {
-        usuario,
-        clave,
-        error,
-        onSubmit
-      };
-    }
-  }
-  </script>
+//   toast.warn("Warning Notification !", {
+//     position: toast.POSITION.BOTTOM_LEFT,
+//   });
+  
+//   toast.info("Info Notification !", {
+//     position: toast.POSITION.BOTTOM_CENTER,
+//   });
+// };
+
+const usuario = ref("admin@admin.com");
+const clave = ref("");
+const error = ref(false);
+
+const onSubmit = () => {
+  const authStore = useAuthStore();
+  authStore.login(usuario.value, clave.value)
+    .catch(() => {
+      error.value = true;
+      toast.error("Usuario y/o contraseña incorrectos!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    });
+};
+</script>
+
   
   <style scoped>
   .login-container {

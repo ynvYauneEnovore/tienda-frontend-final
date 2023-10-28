@@ -1,15 +1,81 @@
+<template>
+  <div class="container">
+    <form @submit.prevent="crearProducto" class="form-container">
+      <h2 class="">Crear Producto</h2>
+
+      <div class="form-group">
+        <div class="row flex space-x-4">
+          <div class="w-1/2">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" v-model="nombre" placeholder="Nombre" required />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row flex space-x-4">
+          <div class="col">
+            <label for="estado">Estado</label>
+            <input type="text" class="form-control" v-model="estado" placeholder="Estado" required />
+          </div>
+
+          <div class="col">
+            <label for="precio">Precio</label>
+            <input type="number" class="form-control" v-model="precio" placeholder="Precio" required />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row flex space-x-4">
+         
+          <div class="col">
+            <label for="codigoProducto">Código</label>
+            <input type="number" class="form-control" v-model="codigoProducto" placeholder="Código Producto" required />
+          </div>
+
+          <div class="col">
+            <label for="stock">Stock</label>
+            <input type="number" class="form-control" v-model="stock" placeholder="Stock" required />
+          </div>
+   
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="row flex space-x-4">
+
+          <div class="col">
+            <label for="idCategoriaProductos">Categoría Producto</label>
+            <input type="number" class="form-control" v-model="idCategoriaProductos" placeholder="Categoría Producto" required />
+          </div>
+
+          <div class="col">
+            <label for="descripcion">Descripción</label>
+            <input type="text" class="form-control" v-model="descripcion" placeholder="Descripción" required />
+          </div>
+
+   
+        </div>
+      </div>
+
+      
+      <div class="text-center">
+        <button type="submit" class="btn btn-success btn-lg">Crear</button>
+      </div>
+    </form>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref } from 'vue'
 import http from '@/plugins/axios'
 import router from '@/router'
-import Header from "../Header.vue"
-import Footer from "../Footer.vue"
 
 const props = defineProps<{
   ENDPOINT_API: string
 }>()
 
-const ENDPOINT = props.ENDPOINT_API ?? ''
+const ENDPOINT = props.ENDPOINT_API || ''
 const idCategoriaProductos = ref('')
 const codigoProducto = ref('')
 const nombre = ref('')
@@ -29,59 +95,73 @@ async function crearProducto() {
       codigoProducto: codigoProducto.value,
       idCategoriaProductos: idCategoriaProductos.value,
     })
-    .then(() => router.push('/producto'))
+    .then(() => router.push('/panel/verProducto/ver'))
 }
 
 function goBack() {
   router.go(-1)
 }
 </script>
+<style scoped>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+}
 
+.form-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  margin: 0 auto;
+  text-align: left;
+}
 
-<template>
-  <Header />
-  <br>
-  <h2 class="intro-y text-lg font-medium">Crear Producto</h2>
-  <div class="grid grid-cols-12 gap-6 mt-5">
-    <!-- ... -->
-  </div>
-  <form @submit.prevent="crearProducto">
-    <div class="form-floating mb-3">
-      <input type="text" class="form-control" v-model="nombre" placeholder="Nombre" required />
-      <label for="nombre">Nombre</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input type="number" class="form-control" v-model="precio" placeholder="Precio" required />
-      <label for="precio">Precio</label>
-    </div>
+.form-group {
+  margin-bottom: 15px;
+}
 
-    <div class="form-floating mb-3">
-      <input type="text" class="form-control" v-model="estado" placeholder="Precio" required />
-      <label for="precio">estado</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input type="text" class="form-control" v-model="descripcion" placeholder="Descripción" required />
-      <label for="descripcion">Descripción</label>
-    </div>
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    <div class="form-floating mb-3">
-      <input type="number" class="form-control" v-model="idCategoriaProductos" placeholder="Mínimo" required />
-      <label for="min">categoriaproducto</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input type="number" class="form-control" v-model="codigoProducto" placeholder="Máximo" required />
-      <label for="max">codigo producto</label>
-    </div>
-    <div class="form-floating mb-3">
-      <input type="number" class="form-control" v-model="stock" placeholder="Stock" required />
-      <label for="stock">Stock</label>
-    </div>
+.input-group label {
+  width: 20%;
+}
 
-    <div class="text-center mt-3">
-    <button type="submit" class="btn btn-success btn-lg">Crear</button>
-  </div>>
-  </form>
-  <Footer />
-</template>
+.input-group .form-control {
+  width: 70%;
+}
 
-<style></style>
+.form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+</style>

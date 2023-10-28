@@ -3,6 +3,7 @@ import { useRoute } from "vue-router";
 const location = useRoute();
 import { useAuthStore } from "@/stores/index";
 const authStore = useAuthStore();
+
 </script>
 
 
@@ -31,7 +32,7 @@ const authStore = useAuthStore();
         <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
 
           <li class="nav-item">
-            <RouterLink to="/ayuda">
+            <RouterLink :to="{ path: '/ayuda' }">
               <lord-icon
     src="https://cdn.lordicon.com/ojnjgkun.json"
     trigger="hover"

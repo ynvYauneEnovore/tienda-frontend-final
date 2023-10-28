@@ -19,23 +19,37 @@ onMounted(async () => {
   }
 });
 
+
+
+
 </script>
+
+
+
+
 
 <template>
  
 
   <Header />
 
-  <div class="gallery">
-        <div class="image">
-          <p v-for="producto in catProductos" :key="producto.id">{{ producto.nombre }}</p>
-        </div>
-    </div>
-
   
-  <div class="menu-lado">
 
-    <h1>Filtro de Productos</h1>
+    <div class="gallery grow">
+  <div class="image" v-for="producto in catProductos" :key="producto.id">
+    <p>{{ producto.nombre }}</p>
+  </div>
+</div>
+
+
+
+
+  <div class="menu-lado">
+ 
+
+    <div transition-style class="--in-custom"><h1>Filtro de Productos</h1></div>
+
+   
         <form id="filtro-tienda">
             <label for="categoria">Categoría:</label>
             <select id="categoria" name="categoria">
@@ -54,12 +68,40 @@ onMounted(async () => {
             <input type="submit" value="Filtrar">
         </form>
 </div>
+
+
+
   <DefaultFooter />
 
 
 </template>
 
 <style>
+.grow{
+    transition: .5s, color .10s;
+        -webkit-transition: .5s, color .10s;
+        -moz-transition: .5s, color .10s;
+}
+.grow:hover{
+    transform: scale3d(1.5, 1.5, 0.3);
+        -webkit-transform: scale3d(1.5, 1.5, 0.3);
+        -moz-transform: scale3d(1.5, 1.5, 0.3);
+}
+
+
+@keyframes in-circle-swoop {
+  from {
+    clip-path: var(--circle-top-right-out);
+  }
+  to {
+    clip-path: var(--circle-bottom-right-in);
+  }
+}
+
+.--in-custom {
+  --transition__duration: 5s;
+  animation-name: in-circle-swoop;
+}
 
 .menu-lado {
 

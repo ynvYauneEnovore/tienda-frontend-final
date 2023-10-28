@@ -3,8 +3,6 @@ import type { CatProducto } from '@/models/catproducto'
 import { onMounted, ref } from 'vue'
 import http from '@/plugins/axios'
 import router from '@/router'
-import Header from "../Header.vue";
-import Footer from "../Footer.vue";
 
 const props = defineProps<{
   ENDPOINT_API: string
@@ -34,8 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <Header />
-    <br>
+    
     <h2 class="intro-y text-lg font-medium">Adminitración de Productos</h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
@@ -58,8 +55,6 @@ onMounted(() => {
                     <tr>
                         <th>#</th>
                         <th>NOMBRE</th>
-                        <th>FECHA DE CREACIÓN</th>
-                        <th>FECHA DE MODICACIÓN</th>
 
                     </tr>
                 </thead>
@@ -67,9 +62,6 @@ onMounted(() => {
                   <tr v-for="(catproducto, index) in catproductos.values()" :key="catproducto.id">
             <th scope="row">{{ index + 1 }}</th>
             <td>{{ catproducto.nombre }}</td>
-            <td>{{ catproducto.fechaCreacion }}</td>
-
-            <td>{{ catproducto.fechaModificacion }}</td>
 
       
             <td>
@@ -89,7 +81,6 @@ onMounted(() => {
         <!-- END: Data List -->
     </div>
     <!-- BEGIN: Delete Confirmation Modal -->
-    <Footer />
 
 </template>
 

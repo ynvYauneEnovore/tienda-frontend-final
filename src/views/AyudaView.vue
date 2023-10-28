@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import Header from "@/components/Header.vue";
 import DefaultFooter from "@/components/Footer.vue";
+import "@/assets/js/jquery.min.js";
+import "@/assets/js/bootstrap.min.js";
 </script>
+
+
+
 
 <template>
       <Header></Header>
@@ -59,6 +64,8 @@ import DefaultFooter from "@/components/Footer.vue";
   
   
   <style scoped>
+  @import "../assets/css/bootstrap.min.css";
+
   .text-h2 {
     font-size: 28px;
     font-weight: bold;

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/BienvenidoView.vue'
 import LoginView from "@/views/LoginView.vue";
 import LandingView from '@/views/LandingView.vue';
+import ProductoView from '@/views/ProductoView.vue';
+
 import AyudaView from '@/views/AyudaView.vue';
 import { useAuthStore } from '@/stores';
 import { getTokenFromLocalStorage } from '@/helpers';
@@ -26,8 +28,29 @@ const router = createRouter({
     {
       path: '/panel',
       name: 'panel',
-      component: HomeView
+      component: HomeView,
+      children: [
+        { path: '', component: () => import('../components/dasboard/DashboardView.vue') },
+        { path: 'verProducto', component: ProductoView, 
+        children: [
+          {
+            path: 'ver',
+            component:  () => import('../components/producto/ProductoList.vue')
+          },
+          {
+            path: 'crear',
+            component:  () => import('../components/producto/ProductoCreate.vue')
+          }
+        ]
+       },  
+        { path: 'crearProducto', component: () => import('../components/catproducto/CatProductoCreate.vue') },
+
+        ]
       
+    },
+
+    {
+      path: '/crearproducto', component: () => import('../components/producto/ProductoCreate.vue')
     },
 
     { path: "/login", name: "login", component: LoginView  },
