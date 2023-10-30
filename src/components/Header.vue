@@ -15,7 +15,7 @@ const authStore = useAuthStore();
           src="../src/assets/json/config.json"
           trigger="loop"
           state="loop-cog"
-          colors="primary:#fff"
+          colors="primary:#000"
           style="width:40px;height:40px">
       </lord-icon>
       </RouterLink>
