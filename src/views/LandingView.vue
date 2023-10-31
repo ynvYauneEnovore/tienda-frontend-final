@@ -5,6 +5,7 @@ const currentTime = ref('');
 
 const updateTime = () => {
   const now = new Date();
+  
   const options = {
     hour: 'numeric',
     minute: 'numeric',
@@ -18,6 +19,8 @@ onMounted(() => {
   updateTime();
   setInterval(updateTime, 1000);
 });
+
+
 </script>
 
 

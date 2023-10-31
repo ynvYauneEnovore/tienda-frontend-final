@@ -6,6 +6,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import './index.css'
 
 
 const app = createApp(App)
@@ -15,3 +16,4 @@ app.use(router)
 
 app.mount('#app')
 //import "bootstrap/dist/js/bootstrap.min.js";
+import "../src/assets/js/tailwind.js";
