@@ -109,7 +109,7 @@
 
 
 
-<script setup>
+<script setup lang="ts">
 import { onMounted } from 'vue'
 import { initFlowbite } from 'flowbite'
 import { useRoute } from "vue-router";

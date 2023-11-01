@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import Menues from '@/components/dashboard/menulateral.vue';
 
 const currentTime = ref('');
 
@@ -27,7 +28,7 @@ onMounted(() => {
 
 
 <template>
-
+<Menues />
 <div class="h-screen flex flex-col">
 
  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
@@ -129,6 +130,7 @@ onMounted(() => {
   </div>
   </div>
 </nav>
+
 
 
 <!-- galeria  -->
