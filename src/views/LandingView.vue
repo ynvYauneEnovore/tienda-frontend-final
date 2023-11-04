@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import Menues from '@/components/dashboard/menulateral.vue';
+import Menu from '@/components/landing/menulateral.vue';
+import Galeria from '@/components/landing/galeria.vue';
 
 const currentTime = ref('');
 
@@ -28,7 +29,9 @@ onMounted(() => {
 
 
 <template>
-<Menues />
+<Menu />
+
+
 <div class="h-screen flex flex-col">
 
  <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
@@ -133,31 +136,7 @@ onMounted(() => {
 
 
 
-<!-- galeria  -->
-<div class="grid gap-4 gallery">
-    <div>
-        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/featured/image.jpg" alt="">
-    </div>
-    <div class="grid grid-cols-5 gap-4">
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-        </div>
-        <div>
-            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-        </div>
-    </div>
-</div>
-
-
+<Galeria />
 
 
 
@@ -271,15 +250,6 @@ onMounted(() => {
 
 
 <style>
-
-
-.gallery {
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 
 </style>

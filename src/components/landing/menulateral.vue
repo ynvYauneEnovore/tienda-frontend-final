@@ -21,7 +21,7 @@ export default defineComponent({
       setTimeout(() => {
         this.searchBoxVisible = false;
         this.ButtonBoxVisible = true;
-      }, 3000);
+      }, 2000);
     }
   },
   mounted() {

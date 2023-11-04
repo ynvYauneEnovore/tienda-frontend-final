@@ -7,4 +7,5 @@ export interface Producto {
   precio: number;
   estado: boolean;
   stock: string;
+  imagen: string;
 }

@@ -34,7 +34,7 @@ const router = createRouter({
           component: () => import("../components/dasboard/DashboardView.vue"),
         },
         {
-          path: "verProducto",
+          path: "productos",
           component: ProductoView,
           children: [
             {

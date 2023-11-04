@@ -59,6 +59,20 @@
       </div>
 
       
+      <div class="form-group">
+          <label for="estado" class="form-label">Imagen</label>
+          <input
+            type="file"
+            name="file"
+            class="form-input"
+            @change="handleImageChange"
+
+            placeholder="imagen"
+            required
+          />
+        </div>
+
+
       <div class="text-center">
         <button type="submit" class="btn btn-success btn-lg">Crear</button>
       </div>
@@ -84,6 +98,15 @@ const precio = ref('')
 const estado = ref('')
 const stock = ref('')
 
+const imagen = ref<File | null>(null);
+
+const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const selectedImage = event.target.files?.[0];
+  imagen.value = selectedImage;
+};
+
+
+
 async function crearProducto() {
   await http
     .post(ENDPOINT, {
@@ -94,8 +117,9 @@ async function crearProducto() {
       stock: stock.value,
       codigoProducto: codigoProducto.value,
       idCategoriaProductos: idCategoriaProductos.value,
+      imagen: imagen.value,
     })
-    .then(() => router.push('/panel/verProducto/ver'))
+    .then(() => router.push('/panel/productos/ver'))
 }
 
 function goBack() {
