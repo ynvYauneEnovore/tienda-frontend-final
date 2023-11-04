@@ -68,6 +68,10 @@ Esperamos tus contribuciones para mejorar este proyecto.
 - Correo Electrónico: [yovanuxf@gmail.com](mailto:yovanuxf@gmail.com)
 
 ## Galeria
+
+
+![Logo-docker](https://raw.githubusercontent.com/ynvYauneEnovore/b-usfx-store/main/src/assets/gif/Multimedia1.gif)
+
 ![Logo-docker](https://raw.githubusercontent.com/ynvYauneEnovore/b-usfx-store/main/src/assets/gif/1.gif)
 
 ## Licencia
