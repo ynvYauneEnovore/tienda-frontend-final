@@ -1,11 +1,12 @@
 <template>
 
 <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+  
     <div class="max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
   
     <div class="flex md:order-2">
       
-  <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer" src="/docs/images/people/profile-picture-5.jpg" alt="User dropdown">
+  <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer" src="https://avatars.githubusercontent.com/u/88410835?v=4" alt="User dropdown">
   
   <!-- Dropdown menu -->
   <div id="userDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
@@ -24,8 +25,8 @@
           <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
         </li>
       </ul>
-      <div class="py-1">
-        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+      <div class="py-1 items-end justify-end">
+        <button  @click="authStore.logout()" class="w-full block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Salir</button>
       </div>
   </div>
   
@@ -40,3 +41,14 @@
     </div>
   </nav>
 </template>
+
+
+<script setup lang="ts">
+
+
+import { useRoute } from "vue-router";
+const location = useRoute();
+import { useAuthStore } from "@/stores/index";
+const authStore = useAuthStore();
+
+</script>

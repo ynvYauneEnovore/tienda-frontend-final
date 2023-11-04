@@ -44,9 +44,18 @@ async function crearProducto() {
     .then(() => router.push('/panel/productos/ver'));
     await getProducto();
     document.querySelector('[data-modal-hide="authentication-modal"]').click();
-    toast.error("Usuario y/o contraseña incorrectos!", {
+    toast.success("Producto creado exitosamente!", {
         position: toast.POSITION.TOP_RIGHT,
       });
+
+      nombre.value = '';
+      estado.value = '';
+      precio.value = null;
+      codigoProducto.value = null;
+      stock.value = null;
+      idCategoriaProductos.value = null;
+      descripcion.value = '';
+      imagen.value = null;
 
 }
 
@@ -92,6 +101,10 @@ const goToPage = (pageNumber) => {
 </script>
 
 <template>
+
+<h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
+    Adminitración de Productos</h2>
+    
   <nav class="flex mb-4" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3">
       <li class="inline-flex items-center">
@@ -134,45 +147,34 @@ const goToPage = (pageNumber) => {
 
 
       <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-        class="relative inline-flex items-center justify-center p-0.5 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled" width="40"
-          height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z"
-            fill="currentColor" stroke-width="0" />
-        </svg>
+        class="relative inline-flex items-center justify-center">
+        <lord-icon
+    src="https://cdn.lordicon.com/rcgrnzji.json"
+    trigger="hover"
+    stroke="bold"
+    state="hover-swirl"
+    style="width:50px;height:50px">
+</lord-icon>
 
       </button>
+      
+      <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+        class="relative inline-flex items-center justify-center" title="Categorias">
+ 
+        <lord-icon
+    src="https://cdn.lordicon.com/nmguxqka.json"
+    trigger="hover"
+    stroke="bold"
+    style="width:50px;height:50px">
+</lord-icon>
+      </button>
+      
 
-      <RouterLink to="/panel/productos/crear"
-        class="relative inline-flex items-center justify-center p-0.5 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-        <lord-icon src="https://cdn.lordicon.com/hqymfzvj.json" trigger="hover" style="width:40px;height:40px">
-        </lord-icon>
-
-      </RouterLink>
-
-      <RouterLink to="/panel/productos/crear"
-        class="relative inline-flex items-center justify-center p-0.5 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-plus-filled" width="40"
-          height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M12 2l.324 .001l.318 .004l.616 .017l.299 .013l.579 .034l.553 .046c4.785 .464 6.732 2.411 7.196 7.196l.046 .553l.034 .579c.005 .098 .01 .198 .013 .299l.017 .616l.005 .642l-.005 .642l-.017 .616l-.013 .299l-.034 .579l-.046 .553c-.464 4.785 -2.411 6.732 -7.196 7.196l-.553 .046l-.579 .034c-.098 .005 -.198 .01 -.299 .013l-.616 .017l-.642 .005l-.642 -.005l-.616 -.017l-.299 -.013l-.579 -.034l-.553 -.046c-4.785 -.464 -6.732 -2.411 -7.196 -7.196l-.046 -.553l-.034 -.579a28.058 28.058 0 0 1 -.013 -.299l-.017 -.616c-.003 -.21 -.005 -.424 -.005 -.642l.001 -.324l.004 -.318l.017 -.616l.013 -.299l.034 -.579l.046 -.553c.464 -4.785 2.411 -6.732 7.196 -7.196l.553 -.046l.579 -.034c.098 -.005 .198 -.01 .299 -.013l.616 -.017c.21 -.003 .424 -.005 .642 -.005zm0 6a1 1 0 0 0 -1 1v2h-2l-.117 .007a1 1 0 0 0 .117 1.993h2v2l.007 .117a1 1 0 0 0 1.993 -.117v-2h2l.117 -.007a1 1 0 0 0 -.117 -1.993h-2v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z"
-            fill="currentColor" stroke-width="0" />
-        </svg>
-
-      </RouterLink>
+  
     </div>
 
 
   </nav>
-
-  <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
-    Adminitración de Productos</h2>
-
 
   <div class="relative overflow-x-auto">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -293,80 +295,61 @@ const goToPage = (pageNumber) => {
           <span class="sr-only">Close modal</span>
         </button>
         <div class="px-6 py-6 lg:px-8">
-          <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
-
+          <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Crear Productos</h3>
           <form @submit.prevent="crearProducto" class="form-container">
-            <h2 class="">Crear Producto</h2>
+  <div class="form-group">
+    <div class="row flex space-x-4">
+      <div class="w-full">
+        <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="nombre" placeholder="Nombre" required />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row flex space-x-4">
+      <div class="col">
+        <label for="estado" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Estado</label>
+        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="estado" placeholder="Estado" required />
+      </div>
+      <div class="col">
+        <label for="precio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Precio</label>
+        <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="precio" placeholder="Precio" required />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row flex space-x-4">
+      <div class="col">
+        <label for="codigoProducto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Código</label>
+        <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="codigoProducto" placeholder="Código Producto" required />
+      </div>
+      <div class="col">
+        <label for="stock" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stock</label>
+        <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="stock" placeholder="Stock" required />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row flex space-x-4">
+      <div class="col">
+        <label for="idCategoriaProductos" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categoría Producto</label>
+        <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="idCategoriaProductos" placeholder="Categoría Producto" required />
+      </div>
+      <div class="col">
+        <label for="descripcion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
+        <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="descripcion" placeholder="Descripción" required />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="estado" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Imagen</label>
+    <input type="file" name="file" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" @change="handleImageChange" placeholder="Imagen" required />
+  </div>
+  <div class="text-center">
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Crear</button>
+  </div>
+</form>
 
-            <div class="form-group">
-              <div class="row flex space-x-4">
-                <div class="w-1/2">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" class="form-control" v-model="nombre" placeholder="Nombre" required />
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row flex space-x-4">
-                <div class="col">
-                  <label for="estado">Estado</label>
-                  <input type="text" class="form-control" v-model="estado" placeholder="Estado" required />
-                </div>
-
-                <div class="col">
-                  <label for="precio">Precio</label>
-                  <input type="number" class="form-control" v-model="precio" placeholder="Precio" required />
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="row flex space-x-4">
-
-                <div class="col">
-                  <label for="codigoProducto">Código</label>
-                  <input type="number" class="form-control" v-model="codigoProducto" placeholder="Código Producto"
-                    required />
-                </div>
-
-                <div class="col">
-                  <label for="stock">Stock</label>
-                  <input type="number" class="form-control" v-model="stock" placeholder="Stock" required />
-                </div>
-
-              </div>
-            </div>
-
-
-            <div class="form-group">
-              <div class="row flex space-x-4">
-
-                <div class="col">
-                  <label for="idCategoriaProductos">Categoría Producto</label>
-                  <input type="number" class="form-control" v-model="idCategoriaProductos"
-                    placeholder="Categoría Producto" required />
-                </div>
-
-                <div class="col">
-                  <label for="descripcion">Descripción</label>
-                  <input type="text" class="form-control" v-model="descripcion" placeholder="Descripción" required />
-                </div>
-
-
-              </div>
-            </div>
-
-
-            <div class="form-group">
-              <label for="estado" class="form-label">Imagen</label>
-              <input type="file" name="file" class="form-input" @change="handleImageChange" placeholder="imagen"
-                required />
-            </div>
-
-
-            <div class="text-center">
-              <button type="submit" class="btn btn-success btn-lg">Crear</button>
-            </div>
-          </form>
 
         </div>
       </div>

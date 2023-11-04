@@ -33,6 +33,8 @@
   <style scoped>
   .dashboard-content {
     padding: 20px;
+    margin-top: 10%;
+
   }
   
   .widget {
