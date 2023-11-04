@@ -4,23 +4,21 @@
 //import Footer from "./components/Footer.vue";
 import '@/index.css';
 import 'flowbite';
+import '@/main.ts';
+
+
 
 </script>
 
 <template>
-  <main>
+  <main class="bg-white dark:bg-gray-900">
     <RouterView />
   </main>
 </template>
 
 <style>
 
-/* @import "@/assets/css/bootstrap.min.css"; */
-/* @import "@/assets/css/app.css";
-@import "@/assets/css/_app.css"; */
-/* @import "@/assets/css/bootstrap-icons.css";
-@import "@/assets/css/material-kit-pro.css";
-@import "@/assets/css/material-kit-pro.min.css"; */
+
 
 
 </style>

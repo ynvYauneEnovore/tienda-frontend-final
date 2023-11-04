@@ -11,5 +11,9 @@ module.exports = {
     require('flowbite/plugin')({
       charts: true,
   }),
+  module.exports = {
+    darkMode: 'class',
+    // ...
+  },
   ],
 }

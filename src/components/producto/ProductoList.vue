@@ -5,7 +5,8 @@ import http from '@/plugins/axios'
 import router from '@/router'
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
-
+import 'flowbite';
+import { initFlowbite } from 'flowbite'
 
 const props = defineProps<{
   ENDPOINT_API: string
@@ -71,7 +72,9 @@ async function toDelete(id: number) {
 }
 
 onMounted(() => {
-  getProducto()
+  getProducto();
+  initFlowbite();
+
 })
 
 const displayedProducts = computed(() => {
@@ -104,7 +107,7 @@ const goToPage = (pageNumber) => {
 
 <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
     Adminitración de Productos</h2>
-    
+
   <nav class="flex mb-4" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3">
       <li class="inline-flex items-center">

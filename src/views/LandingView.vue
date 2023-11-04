@@ -2,8 +2,12 @@
 import { ref, onMounted } from 'vue';
 import Menu from '@/components/landing/menulateral.vue';
 import Galeria from '@/components/landing/galeria.vue';
+import { initFlowbite } from 'flowbite'
+import 'flowbite';
+import Tema from '@/components/global/tema.vue';
 
 const currentTime = ref('');
+
 
 const updateTime = () => {
   const now = new Date();
@@ -20,7 +24,11 @@ const updateTime = () => {
 onMounted(() => {
   updateTime();
   setInterval(updateTime, 1000);
+  initFlowbite();
+
+
 });
+
 
 
 </script>
@@ -198,7 +206,13 @@ onMounted(() => {
         <div id="moreOptionsDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="moreOptionsDropdownButton">
                 <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Show participants</a>
+                  <button data-tooltip-target="tooltip-information" type="button" class="p-2.5 group rounded-full hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-600 dark:hover:bg-gray-600">
+          <Tema />
+        </button>
+        <div id="tooltip-information" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+            Tema
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
                 </li>
                 <li>
                     <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Adjust volume</a>
@@ -231,15 +245,15 @@ onMounted(() => {
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <button data-tooltip-target="tooltip-information" type="button" class="p-2.5 group rounded-full hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-600 dark:hover:bg-gray-600">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-            </svg>
-            <span class="sr-only">Show information</span>
+          <Tema />
         </button>
         <div id="tooltip-information" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
-            Show information
+            Tema
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
+      
+
+        
     </div>
     
 </div>
