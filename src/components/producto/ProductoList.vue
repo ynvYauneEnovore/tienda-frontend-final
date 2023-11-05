@@ -106,7 +106,7 @@ const goToPage = (pageNumber) => {
 <template>
 
 <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
-    Adminitración de Productos</h2>
+    Productos</h2>
 
   <nav class="flex mb-4" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -152,26 +152,15 @@ const goToPage = (pageNumber) => {
       <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
         class="relative inline-flex items-center justify-center">
         <lord-icon
-    src="https://cdn.lordicon.com/rcgrnzji.json"
+    src="https://cdn.lordicon.com/ftndcppj.json"
     trigger="hover"
-    stroke="bold"
-    state="hover-swirl"
+    colors="primary:#107c91,secondary:#ebe6ef"
     style="width:50px;height:50px">
 </lord-icon>
 
       </button>
       
-      <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-        class="relative inline-flex items-center justify-center" title="Categorias">
- 
-        <lord-icon
-    src="https://cdn.lordicon.com/nmguxqka.json"
-    trigger="hover"
-    stroke="bold"
-    style="width:50px;height:50px">
-</lord-icon>
-      </button>
-      
+    
 
   
     </div>
@@ -199,7 +188,7 @@ const goToPage = (pageNumber) => {
             Estado
           </th>
           <th scope="col" class="px-6 py-3">
-
+Acciones
           </th>
         </tr>
       </thead>
@@ -220,17 +209,28 @@ const goToPage = (pageNumber) => {
             {{ producto.descripcion }}
           </td>
           <td class="px-6 py-4">
-            {{ producto.estado }}
-          </td>
+    <p :class="producto.estado ? 'disponible' : 'agotado'">
+    {{ producto.estado ? 'Disponible' : 'Agotado' }}
+  </p>
+
+</td>
+
           <td class="px-6 py-4">
 
             <button class="btn btn-link" @click="toEdit(producto.id)">
-              <span class="material-symbols-outlined">edit</span>
+              <lord-icon
+    src="https://cdn.lordicon.com/hifghmba.json"
+    trigger="hover"
+    style="width:30px;height:30px">
+</lord-icon>
             </button>
             <button class="btn btn-link" @click="toDelete(producto.id)">
-              <span class="material-symbols-outlined">
-                delete
-              </span>
+              <lord-icon
+    src="https://cdn.lordicon.com/hjbrplwk.json"
+    trigger="hover"
+    colors="primary:#646e78,secondary:#0a2e5c,tertiary:#ebe6ef,quaternary:#3a3347"
+    style="width:30px;height:30px">
+</lord-icon>
             </button>
           </td>
         </tr>
@@ -360,5 +360,13 @@ const goToPage = (pageNumber) => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.disponible {
+  color: green;
+}
+
+.agotado {
+  color: red;
+}
+</style>
 

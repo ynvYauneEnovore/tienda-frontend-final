@@ -2,6 +2,8 @@
 import { ref, onMounted } from 'vue';
 import Menu from '@/components/landing/menulateral.vue';
 import Galeria from '@/components/landing/galeria.vue';
+import GaleriaImg from '@/components/landing/galeria-imagen.vue';
+
 import { initFlowbite } from 'flowbite'
 import 'flowbite';
 import Tema from '@/components/global/tema.vue';
@@ -143,9 +145,7 @@ onMounted(() => {
 </nav>
 
 
-
-<Galeria />
-
+<GaleriaImg />
 
 
 <div class="fixed bottom-0 left-0 z-50 grid w-full h-16 grid-cols-1 px-8 bg-white border-t border-gray-200 md:grid-cols-3 dark:bg-gray-700 dark:border-gray-600">
