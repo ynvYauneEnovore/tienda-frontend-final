@@ -144,7 +144,7 @@ export default defineComponent({
    background-color: #ffffff;
    border: 1px solid #ccc;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   z-index: 1;
+   z-index: 2;
    transition: opacity 1.0s;
  }
 
@@ -152,7 +152,7 @@ export default defineComponent({
    
    position: fixed;
    top: 30%;
-   right: 0%;
+   right: 10%;
    background-color: #fff;
    border: 1px solid #ccc;
 
